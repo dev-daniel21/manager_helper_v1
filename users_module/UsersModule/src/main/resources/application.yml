@@ -1,0 +1,11 @@
+spring:
+  profiles.active: H2
+  config:
+    import:
+      - classpath:persistence.yml
+
+
+
+
+server:
+  port: 8082

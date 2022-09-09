@@ -1,0 +1,39 @@
+#spring:
+#  config:
+#    activate.on-profile: 'mssql'
+
+
+#
+#app:
+#  data-sources:
+#    master:
+#      datasource: jdbc:sqlserver://${app.db.host};databaseName=${app.db.name};encrypt=true;trustServerCertificate=true
+#        url:
+#        driverClassName: com.microsoft.sql.server.jdbc.SQLServerDriver
+#        username: ${app.db.username}
+#        password:${app.db.password}
+#  db:
+#    host: localhost:1433
+#    name: databasename
+#    username: dw
+#    password: pass
+#
+#---
+
+spring:
+  config:
+    activate.on-profile: 'H2'
+  h2.console.enabled: true
+  datasource:
+    url: jdbc:h2:mem:${db.name}
+    driverClassName: org.h2.Driver
+    username: ${db.username}
+    password: ${db.password}
+  jpa.database-platform: org.hibernate.dialect.H2Dialect
+
+
+db:
+  host: localhost:1433
+  name: users
+  username: dw1
+  password:
